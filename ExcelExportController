@@ -1,0 +1,22 @@
+public with sharing class ExcelExportController {
+  public WorkOrderLineItem[] wolineitems { get; set; }
+  public integer wolSize { get; set; }
+  public String xmlheader { get; set; }
+  public string endfile { get; set; }
+  public Opportunity[] opportunities { get; set; }
+  public Integer oppSize { get; set; }
+    
+  public String[] getStrings() {
+         return new String[]{'ONE','TWO','THREE'};
+     } 
+    
+    
+  public ExcelExportController() {
+    xmlheader = '<?xml version="1.0" encoding="utf-8"?><?mso-application progid="Excel.Sheet"?>';
+    endfile = '</Workbook>';
+
+   
+    // opportunities = [SELECT Id, Name, StageName, Amount FROM Opportunity LIMIT 10];
+    //oppSize = opportunities.size();
+  }
+}
